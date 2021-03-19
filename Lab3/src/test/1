@@ -1,0 +1,55 @@
+
+1.elf:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000004000e8 <upper>:
+  4000e8:	55                   	push   %rbp
+  4000e9:	48 89 e5             	mov    %rsp,%rbp
+  4000ec:	89 7d ec             	mov    %edi,-0x14(%rbp)
+  4000ef:	89 75 e8             	mov    %esi,-0x18(%rbp)
+  4000f2:	89 55 e4             	mov    %edx,-0x1c(%rbp)
+  4000f5:	89 4d e0             	mov    %ecx,-0x20(%rbp)
+  4000f8:	44 89 45 dc          	mov    %r8d,-0x24(%rbp)
+  4000fc:	44 89 4d d8          	mov    %r9d,-0x28(%rbp)
+  400100:	83 45 ec 01          	addl   $0x1,-0x14(%rbp)
+  400104:	83 45 e8 01          	addl   $0x1,-0x18(%rbp)
+  400108:	83 45 e4 01          	addl   $0x1,-0x1c(%rbp)
+  40010c:	83 45 e0 01          	addl   $0x1,-0x20(%rbp)
+  400110:	83 45 dc 01          	addl   $0x1,-0x24(%rbp)
+  400114:	83 45 d8 01          	addl   $0x1,-0x28(%rbp)
+  400118:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  40011f:	eb 50                	jmp    400171 <upper+0x89>
+  400121:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400124:	48 98                	cltq   
+  400126:	48 8d 15 d3 0e 20 00 	lea    0x200ed3(%rip),%rdx        # 601000 <Message>
+  40012d:	0f b6 04 10          	movzbl (%rax,%rdx,1),%eax
+  400131:	3c 60                	cmp    $0x60,%al
+  400133:	7e 38                	jle    40016d <upper+0x85>
+  400135:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400138:	48 98                	cltq   
+  40013a:	48 8d 15 bf 0e 20 00 	lea    0x200ebf(%rip),%rdx        # 601000 <Message>
+  400141:	0f b6 04 10          	movzbl (%rax,%rdx,1),%eax
+  400145:	3c 7a                	cmp    $0x7a,%al
+  400147:	7f 24                	jg     40016d <upper+0x85>
+  400149:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  40014c:	48 98                	cltq   
+  40014e:	48 8d 15 ab 0e 20 00 	lea    0x200eab(%rip),%rdx        # 601000 <Message>
+  400155:	0f b6 04 10          	movzbl (%rax,%rdx,1),%eax
+  400159:	83 e8 20             	sub    $0x20,%eax
+  40015c:	89 c1                	mov    %eax,%ecx
+  40015e:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400161:	48 98                	cltq   
+  400163:	48 8d 15 96 0e 20 00 	lea    0x200e96(%rip),%rdx        # 601000 <Message>
+  40016a:	88 0c 10             	mov    %cl,(%rax,%rdx,1)
+  40016d:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+  400171:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400174:	48 98                	cltq   
+  400176:	48 8d 15 83 0e 20 00 	lea    0x200e83(%rip),%rdx        # 601000 <Message>
+  40017d:	0f b6 04 10          	movzbl (%rax,%rdx,1),%eax
+  400181:	84 c0                	test   %al,%al
+  400183:	75 9c                	jne    400121 <upper+0x39>
+  400185:	48 8d 05 74 0e 20 00 	lea    0x200e74(%rip),%rax        # 601000 <Message>
+  40018c:	5d                   	pop    %rbp
+  40018d:	c3                   	retq   
